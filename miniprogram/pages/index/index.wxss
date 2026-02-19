@@ -1,0 +1,128 @@
+/* pages/index/index.wxss */
+
+.container {
+  min-height: 100vh;
+  background: var(--bg-color);
+}
+
+/* 总资产卡片 */
+.summary-card {
+  background: linear-gradient(135deg, #1989fa 0%, #1976d2 100%);
+  color: #ffffff;
+}
+
+.summary-header {
+  padding: 30rpx 0;
+  text-align: center;
+}
+
+.summary-label {
+  font-size: 28rpx;
+  opacity: 0.9;
+}
+
+.summary-value {
+  display: block;
+  font-size: 64rpx;
+  font-weight: 600;
+  margin-top: 10rpx;
+}
+
+.summary-details {
+  display: flex;
+  padding-top: 30rpx;
+  border-top: 2rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.summary-item {
+  flex: 1;
+  text-align: center;
+}
+
+.summary-item-label {
+  display: block;
+  font-size: 24rpx;
+  opacity: 0.8;
+}
+
+.summary-item-value {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-top: 8rpx;
+}
+
+.profit-percent {
+  font-size: 24rpx;
+  margin-left: 10rpx;
+}
+
+/* 持仓列表 */
+.position-list {
+  margin: 20rpx;
+}
+
+.position-item {
+  padding: 30rpx;
+  border-bottom: 2rpx solid var(--border-color);
+}
+
+.position-item:last-child {
+  border-bottom: none;
+}
+
+.position-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.position-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.position-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.position-code {
+  font-size: 24rpx;
+  color: var(--text-light);
+  margin-top: 4rpx;
+}
+
+.position-value {
+  text-align: right;
+}
+
+.value-amount {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.position-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-label {
+  font-size: 22rpx;
+  color: var(--text-light);
+}
+
+.detail-value {
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-top: 6rpx;
+}

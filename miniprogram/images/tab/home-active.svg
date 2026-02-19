@@ -1,0 +1,5 @@
+<svg width="81" height="81" viewBox="0 0 81 81" xmlns="http://www.w3.org/2000/svg">
+  <!-- Home/Portfolio icon - active (blue) -->
+  <circle cx="40.5" cy="40.5" r="35" fill="none" stroke="#1989fa" stroke-width="4"/>
+  <path d="M40.5 20 L25 38 L30 38 L30 58 L38 58 L38 45 L43 45 L43 58 L51 58 L51 38 L56 38 Z" fill="#1989fa"/>
+</svg>

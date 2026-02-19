@@ -1,0 +1,68 @@
+/* pages/transaction/transaction.wxss */
+
+.container {
+  min-height: 100vh;
+  background: var(--bg-color);
+  padding: 20rpx;
+}
+
+.transaction-item {
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid var(--border-color);
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.transaction-type {
+  font-size: 28rpx;
+  font-weight: 500;
+  padding: 6rpx 16rpx;
+  border-radius: 6rpx;
+}
+
+.type-buy {
+  background: #fff1f0;
+  color: var(--danger-color);
+}
+
+.type-sell {
+  background: #f6ffed;
+  color: var(--success-color);
+}
+
+.transaction-stock {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.transaction-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-label {
+  font-size: 26rpx;
+  color: var(--text-light);
+}
+
+.detail-value {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: var(--text-primary);
+}

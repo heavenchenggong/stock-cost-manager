@@ -1,0 +1,13 @@
+<svg width="81" height="81" viewBox="0 0 81 81" xmlns="http://www.w3.org/2000/svg">
+  <!-- Settings icon - active (blue) -->
+  <circle cx="40.5" cy="40.5" r="35" fill="none" stroke="#1989fa" stroke-width="4"/>
+  <circle cx="40.5" cy="40.5" r="12" fill="none" stroke="#1989fa" stroke-width="3"/>
+  <path d="M40.5 20 L40.5 26" stroke="#1989fa" stroke-width="4" stroke-linecap="round"/>
+  <path d="M40.5 55 L40.5 61" stroke="#1989fa" stroke-width="4" stroke-linecap="round"/>
+  <path d="M20 40.5 L26 40.5" stroke="#1989fa" stroke-width="4" stroke-linecap="round"/>
+  <path d="M55 40.5 L61 40.5" stroke="#1989fa" stroke-width="4" stroke-linecap="round"/>
+  <path d="M26.3 26.3 L30.5 30.5" stroke="#1989fa" stroke-width="4" stroke-linecap="round"/>
+  <path d="M50.5 50.5 L54.7 54.7" stroke="#1989fa" stroke-width="4" stroke-linecap="round"/>
+  <path d="M54.7 26.3 L50.5 30.5" stroke="#1989fa" stroke-width="4" stroke-linecap="round"/>
+  <path d="M30.5 50.5 L26.3 54.7" stroke="#1989fa" stroke-width="4" stroke-linecap="round"/>
+</svg>

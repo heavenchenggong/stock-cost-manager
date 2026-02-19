@@ -1,0 +1,27 @@
+# 微信小程序
+miniprogram/miniprogram_npm/
+miniprogram/.DS_Store
+
+# 云函数
+cloudfunctions/*/node_modules/
+cloudfunctions/*/.DS_Store
+cloudfunctions/*/package-lock.json
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+npm-debug.log*
+
+# 临时文件
+*.tmp
+.cache/

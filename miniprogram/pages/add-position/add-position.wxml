@@ -1,0 +1,84 @@
+<!-- pages/add-position/add-position.wxml - 添加持仓页 -->
+
+<view class="container">
+  <view class="card">
+    <view class="form-title">添加新持仓</view>
+
+    <!-- 股票搜索 -->
+    <view class="form-group">
+      <view class="form-label">股票代码</view>
+      <view class="search-input">
+        <input
+          class="input"
+          placeholder="请输入6位股票代码"
+          value="{{stockCode}}"
+          bindinput="onInput"
+          data-field="stockCode"
+          maxlength="6"
+        />
+        <view class="region-selector">
+          <text class="region-btn {{region === 'sh' ? 'active' : ''}}" bindtap="onSelectRegion" data-region="sh">沪市</text>
+          <text class="region-btn {{region === 'sz' ? 'active' : ''}}" bindtap="onSelectRegion" data-region="sz">深市</text>
+        </view>
+      </view>
+      <button class="btn btn-primary search-btn" bindtap="onSearchStock" disabled="{{searching}}">
+        {{searching ? '搜索中...' : '搜索股票'}}
+      </button>
+    </view>
+
+    <!-- 搜索结果 -->
+    <view wx:if="{{searchResult}}" class="search-result">
+      <view class="result-item">
+        <text class="result-name">{{searchResult.n}}</text>
+        <text class="result-code">{{formatStockCode(searchResult.c, region)}}</text>
+      </view>
+    </view>
+
+    <!-- 买入信息 -->
+    <view class="form-group" wx:if="{{stockName}}">
+      <view class="form-label">股票名称</view>
+      <input class="input" disabled value="{{stockName}}" />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">买入价格</view>
+      <input
+        class="input"
+        type="digit"
+        placeholder="请输入买入价格"
+        value="{{buyPrice}}"
+        bindinput="onInput"
+        data-field="buyPrice"
+      />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">买入数量</view>
+      <input
+        class="input"
+        type="number"
+        placeholder="请输入买入数量（股）"
+        value="{{quantity}}"
+        bindinput="onInput"
+        data-field="quantity"
+      />
+    </view>
+
+    <view class="form-group">
+      <view class="form-label">手续费（元）</view>
+      <input
+        class="input"
+        type="digit"
+        placeholder="手续费，如无则不填"
+        value="{{fee}}"
+        bindinput="onInput"
+        data-field="fee"
+      />
+    </view>
+
+    <!-- 提交按钮 -->
+    <button class="btn btn-primary submit-btn" bindtap="onSubmit" disabled="{{loading}}">
+      {{loading ? '添加中...' : '确认添加'}}
+    </button>
+  </view>
+</view>

@@ -1,0 +1,65 @@
+<!-- pages/settings/settings.wxml - 设置页 -->
+
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="card">
+    <view class="user-section">
+      <view class="user-avatar">
+        <image wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}" class="avatar-img" />
+        <view wx:else class="avatar-placeholder">
+          <text class="avatar-text">👤</text>
+        </view>
+      </view>
+      <view class="user-info">
+        <text class="user-name">{{userInfo.nickName || '未登录'}}</text>
+        <text class="user-desc">点击上方按钮获取用户信息</text>
+      </view>
+    </view>
+    <button class="btn btn-primary" bindtap="getUserInfo">获取用户信息</button>
+  </view>
+
+  <!-- 功能设置 -->
+  <view class="card">
+    <view class="section-title">功能设置</view>
+
+    <view class="setting-item">
+      <view class="setting-label">自动刷新行情</view>
+      <switch color="var(--primary-color)" />
+    </view>
+
+    <view class="setting-item">
+      <view class="setting-label">深色模式</view>
+      <switch color="var(--primary-color)" />
+    </view>
+
+    <view class="setting-item">
+      <view class="setting-label">显示手续费</view>
+      <switch color="var(--primary-color)" checked />
+    </view>
+  </view>
+
+  <!-- 其他 -->
+  <view class="card">
+    <view class="section-title">其他</view>
+
+    <view class="setting-item" bindtap="onClearCache">
+      <view class="setting-label">清除缓存</view>
+      <text class="setting-arrow">›</text>
+    </view>
+
+    <view class="setting-item" bindtap="onAbout">
+      <view class="setting-label">关于</view>
+      <text class="setting-arrow">›</text>
+    </view>
+
+    <view class="setting-item">
+      <view class="setting-label">版本</view>
+      <text class="setting-value">v1.0.0</text>
+    </view>
+  </view>
+
+  <!-- 退出按钮 -->
+  <view class="logout-section">
+    <button class="btn btn-danger logout-btn">退出登录</button>
+  </view>
+</view>

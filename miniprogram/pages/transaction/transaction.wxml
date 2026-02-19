@@ -1,0 +1,49 @@
+<!-- pages/transaction/transaction.wxml - 交易记录页 -->
+
+<view class="container">
+  <view class="card">
+    <view wx:if="{{!loading && transactions.length === 0}}" class="empty-state">
+      <text class="empty-text">暂无交易记录</text>
+    </view>
+
+    <view wx:for="{{transactions}}" wx:key="_id" class="transaction-item">
+      <view class="transaction-header">
+        <text class="transaction-type {{item.type === 'buy' ? 'type-buy' : 'type-sell'}}">
+          {{item.type === 'buy' ? '买入' : '卖出'}}
+        </text>
+        <text class="transaction-stock">{{item.stockName}}</text>
+      </view>
+
+      <view class="transaction-details">
+        <view class="detail-row">
+          <text class="detail-label">股票代码</text>
+          <text class="detail-value">{{formatStockCode(item.stockCode, item.region)}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="detail-label">价格</text>
+          <text class="detail-value">¥{{formatMoney(item.price)}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="detail-label">数量</text>
+          <text class="detail-value">{{item.quantity}}股</text>
+        </view>
+        <view class="detail-row">
+          <text class="detail-label">金额</text>
+          <text class="detail-value">¥{{formatMoney(item.price * item.quantity)}}</text>
+        </view>
+        <view wx:if="{{item.fee > 0}}" class="detail-row">
+          <text class="detail-label">手续费</text>
+          <text class="detail-value">¥{{formatMoney(item.fee)}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="detail-label">交易时间</text>
+          <text class="detail-value">{{formatDateTime(item.tradeTime)}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{loading}}" class="loading">
+      <text>加载中...</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/position/position",
+    "pages/add-position/add-position",
+    "pages/transaction/transaction",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1a1a1a",
+    "navigationBarTitleText": "持股成本管理",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f5f5"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#1989fa",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "持仓",
+        "iconPath": "images/tab/home.svg",
+        "selectedIconPath": "images/tab/home-active.svg"
+      },
+      {
+        "pagePath": "pages/transaction/transaction",
+        "text": "记录",
+        "iconPath": "images/tab/record.svg",
+        "selectedIconPath": "images/tab/record-active.svg"
+      },
+      {
+        "pagePath": "pages/add-position/add-position",
+        "text": "添加",
+        "iconPath": "images/tab/add.svg",
+        "selectedIconPath": "images/tab/add-active.svg"
+      },
+      {
+        "pagePath": "pages/settings/settings",
+        "text": "设置",
+        "iconPath": "images/tab/settings.svg",
+        "selectedIconPath": "images/tab/settings-active.svg"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "cloud": true
+}

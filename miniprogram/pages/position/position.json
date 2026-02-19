@@ -1,0 +1,5 @@
+// pages/position/position.json
+{
+  "navigationBarTitleText": "持仓详情",
+  "enablePullDownRefresh": true
+}

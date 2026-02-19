@@ -1,0 +1,8 @@
+<svg width="81" height="81" viewBox="0 0 81 81" xmlns="http://www.w3.org/2000/svg">
+  <!-- Transaction record icon - default (gray) -->
+  <circle cx="40.5" cy="40.5" r="35" fill="none" stroke="#999999" stroke-width="4"/>
+  <path d="M25 25 L56 25 L56 56 L25 56 Z" fill="none" stroke="#999999" stroke-width="3"/>
+  <path d="M32 35 L49 35" stroke="#999999" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 43 L49 43" stroke="#999999" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 51 L42 51" stroke="#999999" stroke-width="3" stroke-linecap="round"/>
+</svg>

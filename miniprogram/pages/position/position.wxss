@@ -1,0 +1,177 @@
+/* pages/position/position.wxss */
+
+.container {
+  min-height: 100vh;
+  background: var(--bg-color);
+  padding-bottom: 120rpx;
+}
+
+/* 持仓信息 */
+.position-header {
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid var(--border-color);
+  margin-bottom: 30rpx;
+}
+
+.stock-name {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.stock-code {
+  display: block;
+  font-size: 24rpx;
+  color: var(--text-light);
+  margin-top: 6rpx;
+}
+
+.position-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.summary-item .label {
+  font-size: 22rpx;
+  color: var(--text-light);
+}
+
+.summary-item .value {
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-top: 6rpx;
+}
+
+/* 盈亏部分 */
+.profit-section {
+  padding: 30rpx;
+  background: var(--bg-color);
+  border-radius: 12rpx;
+  text-align: center;
+}
+
+.profit-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.profit-label {
+  font-size: 28rpx;
+  color: var(--text-regular);
+}
+
+.profit-amount {
+  font-size: 48rpx;
+  font-weight: 600;
+}
+
+.profit-percent {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+/* 交易记录 */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.section-btn {
+  padding: 10rpx 20rpx;
+  background: var(--primary-color);
+  color: #ffffff;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+}
+
+.transaction-item {
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid var(--border-color);
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.transaction-type {
+  font-size: 28rpx;
+  font-weight: 500;
+  padding: 6rpx 16rpx;
+  border-radius: 6rpx;
+}
+
+.type-buy {
+  background: #fff1f0;
+  color: var(--danger-color);
+}
+
+.type-sell {
+  background: #f6ffed;
+  color: var(--success-color);
+}
+
+.transaction-time {
+  font-size: 24rpx;
+  color: var(--text-light);
+}
+
+.transaction-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16rpx;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-label {
+  font-size: 24rpx;
+  color: var(--text-light);
+}
+
+.detail-value {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* 操作按钮 */
+.action-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx;
+  background: #ffffff;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
