@@ -42,6 +42,7 @@ Page({
 
         return {
           ...pos,
+          currentPrice: currentPrice, // 保存 currentPrice 用于 calculateTotal
           formattedCode: this.formatStockCode(pos.stockCode, pos.region),
           formattedValue: `¥${this.formatMoney(value)}`,
           formattedCost: `¥${this.formatMoney(pos.avgCost)}`,

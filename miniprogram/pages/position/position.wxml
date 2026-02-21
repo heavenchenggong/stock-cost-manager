@@ -25,7 +25,7 @@
       </view>
       <view class="summary-item">
         <text class="label">持仓市值</text>
-        <text class="value">¥{{position.formattedMarketValue}}</text>
+        <text class="value">{{position.formattedMarketValue}}</text>
       </view>
     </view>
 
