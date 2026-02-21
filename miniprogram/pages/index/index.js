@@ -91,5 +91,35 @@ Page({
     this.loadPositions().then(() => {
       wx.stopPullDownRefresh();
     });
+  },
+
+  // 工具函数：格式化金额
+  formatMoney(amount) {
+    if (amount === null || amount === undefined || isNaN(amount)) {
+      return '--';
+    }
+    return amount.toFixed(2);
+  },
+
+  // 工具函数：格式化百分比
+  formatPercent(value) {
+    if (value === null || value === undefined || isNaN(value)) {
+      return '--';
+    }
+    const percent = value * 100;
+    return `${percent >= 0 ? '+' : ''}${percent.toFixed(2)}%`;
+  },
+
+  // 工具函数：格式化股票代码
+  formatStockCode(code, region) {
+    const prefix = region === 'sh' ? 'SH' : 'SZ';
+    return `${prefix}${code}`;
+  },
+
+  // 工具函数：获取盈亏样式
+  getProfitClass(value) {
+    if (value > 0) return 'stock-up';
+    if (value < 0) return 'stock-down';
+    return 'stock-flat';
   }
 });
