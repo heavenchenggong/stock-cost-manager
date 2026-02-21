@@ -30,6 +30,10 @@ Page({
         .orderBy('updateTime', 'desc')
         .get();
 
+      console.log('持仓数据原始返回：', res);
+      console.log('持仓数据数量：', res.data.length);
+      console.log('持仓数据详情：', JSON.stringify(res.data, null, 2));
+
       this.setData({
         positions: res.data,
         loading: false

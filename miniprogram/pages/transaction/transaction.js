@@ -27,6 +27,10 @@ Page({
         .orderBy('tradeTime', 'desc')
         .get();
 
+      console.log('交易记录原始返回：', res);
+      console.log('交易记录数量：', res.data.length);
+      console.log('交易记录详情：', JSON.stringify(res.data, null, 2));
+
       this.setData({
         transactions: res.data,
         loading: false
