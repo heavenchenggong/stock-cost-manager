@@ -5,39 +5,39 @@
   <view class="card">
     <view class="position-header">
       <text class="stock-name">{{position.stockName}}</text>
-      <text class="stock-code">{{formatStockCode(position.stockCode, position.region)}}</text>
+      <text class="stock-code">{{position.formattedCode}}</text>
     </view>
 
     <view class="position-summary">
       <view class="summary-item">
         <text class="label">持仓数量</text>
-        <text class="value">{{position.quantity}}股</text>
+        <text class="value">{{position.formattedQuantity}}</text>
       </view>
       <view class="summary-item">
         <text class="label">成本价</text>
-        <text class="value">¥{{formatMoney(position.avgCost)}}</text>
+        <text class="value">{{position.formattedAvgCost}}</text>
       </view>
       <view class="summary-item">
         <text class="label">当前价</text>
         <text class="value {{position.currentPrice > position.avgCost ? 'stock-up' : 'stock-down'}}">
-          ¥{{formatMoney(position.currentPrice || '--')}}
+          {{position.formattedCurrentPrice}}
         </text>
       </view>
       <view class="summary-item">
         <text class="label">持仓市值</text>
-        <text class="value">¥{{formatMoney(position.quantity * (position.currentPrice || position.avgCost))}}</text>
+        <text class="value">¥{{position.formattedMarketValue}}</text>
       </view>
     </view>
 
     <view class="profit-section">
       <view class="profit-header">
         <text class="profit-label">盈亏</text>
-        <text class="profit-amount {{getProfitClass(position.quantity * (position.currentPrice || position.avgCost) - position.quantity * position.avgCost)}}">
-          {{formatMoney(position.quantity * (position.currentPrice || position.avgCost) - position.quantity * position.avgCost)}}
+        <text class="profit-amount {{position.profitClass}}">
+          {{position.formattedProfit}}
         </text>
       </view>
-      <text class="profit-percent {{getProfitClass(position.quantity * (position.currentPrice || position.avgCost) - position.quantity * position.avgCost)}}">
-        {{formatPercent((position.quantity * (position.currentPrice || position.avgCost) - position.quantity * position.avgCost) / (position.quantity * position.avgCost))}}
+      <text class="profit-percent {{position.profitClass}}">
+        {{position.formattedProfitPercent}}
       </text>
     </view>
   </view>
@@ -60,13 +60,13 @@
         <text class="transaction-type {{item.type === 'buy' ? 'type-buy' : 'type-sell'}}">
           {{item.type === 'buy' ? '买入' : '卖出'}}
         </text>
-        <text class="transaction-time">{{formatDateTime(item.tradeTime)}}</text>
+        <text class="transaction-time">{{item.formattedTime}}</text>
       </view>
 
       <view class="transaction-details">
         <view class="detail-row">
           <text class="detail-label">价格</text>
-          <text class="detail-value">¥{{formatMoney(item.price)}}</text>
+          <text class="detail-value">{{item.formattedPrice}}</text>
         </view>
         <view class="detail-row">
           <text class="detail-label">数量</text>
@@ -74,11 +74,11 @@
         </view>
         <view class="detail-row">
           <text class="detail-label">金额</text>
-          <text class="detail-value">¥{{formatMoney(item.price * item.quantity)}}</text>
+          <text class="detail-value">{{item.formattedAmount}}</text>
         </view>
         <view wx:if="{{item.fee > 0}}" class="detail-row">
           <text class="detail-label">手续费</text>
-          <text class="detail-value">¥{{formatMoney(item.fee)}}</text>
+          <text class="detail-value">{{item.formattedFee}}</text>
         </view>
       </view>
     </view>
