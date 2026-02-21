@@ -29,23 +29,23 @@ Page({
 
       console.log('交易记录原始返回：', res);
       console.log('交易记录数量：', res.data.length);
-      console.log('交易记录详情：', JSON.stringify(res.data, null, 2));
+
+      // 预处理数据：在 JS 中格式化
+      const formattedTransactions = res.data.map(item => ({
+        ...item,
+        formattedCode: this.formatStockCode(item.stockCode, item.region),
+        formattedPrice: `¥${this.formatMoney(item.price)}`,
+        formattedAmount: `¥${this.formatMoney(item.price * item.quantity)}`,
+        formattedFee: item.fee > 0 ? `¥${this.formatMoney(item.fee)}` : '',
+        formattedTime: this.formatDateTime(item.tradeTime)
+      }));
+
+      console.log('预处理后数据：', formattedTransactions);
 
       this.setData({
-        transactions: res.data,
+        transactions: formattedTransactions,
         loading: false
       });
-
-      // 测试工具函数
-      if (res.data.length > 0) {
-        const item = res.data[0];
-        console.log('测试工具函数：');
-        console.log('  formatStockCode:', this.formatStockCode(item.stockCode, item.region));
-        console.log('  formatMoney(price):', this.formatMoney(item.price));
-        console.log('  formatMoney(quantity):', this.formatMoney(item.quantity));
-        console.log('  formatMoney(fee):', this.formatMoney(item.fee));
-        console.log('  formatDateTime(tradeTime):', this.formatDateTime(item.tradeTime));
-      }
 
     } catch (err) {
       console.error('加载记录失败：', err);

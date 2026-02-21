@@ -17,11 +17,11 @@
       <view class="transaction-details">
         <view class="detail-row">
           <text class="detail-label">股票代码</text>
-          <text class="detail-value">{{formatStockCode(item.stockCode, item.region)}}</text>
+          <text class="detail-value">{{item.formattedCode}}</text>
         </view>
         <view class="detail-row">
           <text class="detail-label">价格</text>
-          <text class="detail-value">¥{{formatMoney(item.price)}}</text>
+          <text class="detail-value">{{item.formattedPrice}}</text>
         </view>
         <view class="detail-row">
           <text class="detail-label">数量</text>
@@ -29,15 +29,15 @@
         </view>
         <view class="detail-row">
           <text class="detail-label">金额</text>
-          <text class="detail-value">¥{{formatMoney(item.price * item.quantity)}}</text>
+          <text class="detail-value">{{item.formattedAmount}}</text>
         </view>
         <view wx:if="{{item.fee > 0}}" class="detail-row">
           <text class="detail-label">手续费</text>
-          <text class="detail-value">¥{{formatMoney(item.fee)}}</text>
+          <text class="detail-value">{{item.formattedFee}}</text>
         </view>
         <view class="detail-row">
           <text class="detail-label">交易时间</text>
-          <text class="detail-value">{{formatDateTime(item.tradeTime)}}</text>
+          <text class="detail-value">{{item.formattedTime}}</text>
         </view>
       </view>
     </view>

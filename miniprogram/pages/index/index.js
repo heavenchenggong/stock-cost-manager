@@ -32,10 +32,29 @@ Page({
 
       console.log('持仓数据原始返回：', res);
       console.log('持仓数据数量：', res.data.length);
-      console.log('持仓数据详情：', JSON.stringify(res.data, null, 2));
+
+      // 预处理数据：在 JS 中格式化
+      const formattedPositions = res.data.map(pos => {
+        const currentPrice = pos.currentPrice || pos.avgCost;
+        const cost = pos.quantity * pos.avgCost;
+        const value = pos.quantity * currentPrice;
+        const profit = value - cost;
+
+        return {
+          ...pos,
+          formattedCode: this.formatStockCode(pos.stockCode, pos.region),
+          formattedValue: `¥${this.formatMoney(value)}`,
+          formattedCost: `¥${this.formatMoney(pos.avgCost)}`,
+          formattedCurrentPrice: `¥${this.formatMoney(currentPrice)}`,
+          formattedProfit: this.formatMoney(profit),
+          profitClass: this.getProfitClass(profit)
+        };
+      });
+
+      console.log('预处理后数据：', formattedPositions);
 
       this.setData({
-        positions: res.data,
+        positions: formattedPositions,
         loading: false
       });
 

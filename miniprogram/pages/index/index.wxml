@@ -33,10 +33,10 @@
       <view class="position-header">
         <view class="position-info">
           <text class="position-name">{{item.stockName}}</text>
-          <text class="position-code">{{formatStockCode(item.stockCode, item.region)}}</text>
+          <text class="position-code">{{item.formattedCode}}</text>
         </view>
         <view class="position-value">
-          <text class="value-amount">¥{{formatMoney(item.quantity * (item.currentPrice || item.avgCost))}}</text>
+          <text class="value-amount">{{item.formattedValue}}</text>
         </view>
       </view>
 
@@ -47,18 +47,18 @@
         </view>
         <view class="detail-item">
           <text class="detail-label">成本价</text>
-          <text class="detail-value">¥{{formatMoney(item.avgCost)}}</text>
+          <text class="detail-value">{{item.formattedCost}}</text>
         </view>
         <view class="detail-item">
           <text class="detail-label">现价</text>
-          <text class="detail-value {{item.currentPrice > item.avgCost ? 'stock-up' : 'stock-down'}}">
-            ¥{{formatMoney(item.currentPrice || '--')}}
+          <text class="detail-value {{item.profitClass}}">
+            {{item.formattedCurrentPrice}}
           </text>
         </view>
         <view class="detail-item">
           <text class="detail-label">盈亏</text>
-          <text class="detail-value {{getProfitClass(item.quantity * (item.currentPrice || item.avgCost) - item.quantity * item.avgCost)}}">
-            {{formatMoney(item.quantity * (item.currentPrice || item.avgCost) - item.quantity * item.avgCost)}}
+          <text class="detail-value {{item.profitClass}}">
+            {{item.formattedProfit}}
           </text>
         </view>
       </view>
