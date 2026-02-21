@@ -18,7 +18,7 @@
 
 .summary-label {
   font-size: 28rpx;
-  opacity: 0.9;
+  color: #ffffff;
 }
 
 .summary-value {
@@ -26,6 +26,7 @@
   font-size: 64rpx;
   font-weight: 600;
   margin-top: 10rpx;
+  color: #ffffff;
 }
 
 .summary-details {
@@ -42,7 +43,7 @@
 .summary-item-label {
   display: block;
   font-size: 24rpx;
-  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .summary-item-value {
@@ -50,6 +51,7 @@
   font-size: 32rpx;
   font-weight: 500;
   margin-top: 8rpx;
+  color: #ffffff;
 }
 
 .profit-percent {

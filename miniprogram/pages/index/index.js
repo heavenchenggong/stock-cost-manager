@@ -7,9 +7,16 @@ const db = wx.cloud.database();
 Page({
   data: {
     positions: [],
+    // 原始数据（用于计算）
     totalValue: 0,
     totalCost: 0,
     totalProfit: 0,
+    // 预处理后的数据（用于显示）
+    formattedTotalValue: '¥0.00',
+    formattedTotalCost: '¥0.00',
+    formattedTotalProfit: '¥0.00',
+    formattedTotalProfitPercent: '0.00%',
+    totalProfitClass: '',
     loading: false
   },
 
@@ -104,10 +111,17 @@ Page({
 
     const totalProfit = totalValue - totalCost;
 
+    // 预处理总资产数据
+    const formattedTotalProfit = this.formatMoney(totalProfit);
+    const formattedTotalProfitPercent = totalCost > 0 ? ((totalProfit / totalCost) * 100).toFixed(2) : '0.00';
+    const formattedTotalProfitPercentWithSign = totalProfit >= 0 ? '+' : '';
+
     this.setData({
-      totalValue,
-      totalCost,
-      totalProfit
+      formattedTotalValue: `¥${this.formatMoney(totalValue)}`,
+      formattedTotalCost: `¥${this.formatMoney(totalCost)}`,
+      formattedTotalProfit: formattedTotalProfit,
+      formattedTotalProfitPercent: `${formattedTotalProfitPercentWithSign}${formattedTotalProfitPercent}%`,
+      totalProfitClass: this.getProfitClass(totalProfit)
     });
   },
 

@@ -5,18 +5,18 @@
   <view class="card summary-card">
     <view class="summary-header">
       <text class="summary-label">总资产</text>
-      <text class="summary-value">¥{{formatMoney(totalValue)}}</text>
+      <text class="summary-value">{{formattedTotalValue}}</text>
     </view>
     <view class="summary-details">
       <view class="summary-item">
         <text class="summary-item-label">总成本</text>
-        <text class="summary-item-value">¥{{formatMoney(totalCost)}}</text>
+        <text class="summary-item-value">{{formattedTotalCost}}</text>
       </view>
       <view class="summary-item">
         <text class="summary-item-label">总盈亏</text>
-        <text class="summary-item-value {{getProfitClass(totalProfit)}}">
-          {{formatMoney(totalProfit)}}
-          <text wx:if="{{totalProfit !== 0}}" class="profit-percent">({{formatPercent(totalProfit / totalCost)}})</text>
+        <text class="summary-item-value {{totalProfitClass}}">
+          {{formattedTotalProfit}}
+          <text wx:if="{{formattedTotalProfitPercent !== '0.00%'}}">{{formattedTotalProfitPercent}}</text>
         </text>
       </view>
     </view>
