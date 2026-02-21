@@ -33,17 +33,6 @@ Page({
 
       console.log('持仓数据：', posRes.data);
 
-      // 查询该股票的所有交易记录（移除错误的 openid 查询）
-      const transRes = await db.collection('transactions')
-        .where({
-          stockCode: posRes.data.stockCode
-        })
-        .orderBy('tradeTime', 'desc')
-        .get();
-
-      console.log('交易记录数量：', transRes.data.length);
-      console.log('交易记录：', transRes.data);
-
       // 获取实时行情
       const quoteRes = await wx.cloud.callFunction({
         name: 'get-quote',
@@ -55,12 +44,22 @@ Page({
 
       console.log('行情返回：', quoteRes.result);
 
-      let currentPrice = null;
+      let currentPriceFromQuote = null;
       if (quoteRes.result && quoteRes.result.code === 0) {
-        currentPrice = quoteRes.result.data.ld;
+        currentPriceFromQuote = quoteRes.result.data.ld;
       }
 
-      // 预处理持仓数据
+      // 查询该股票的所有交易记录（移除错误的 openid 查询）
+      const transRes = await db.collection('transactions')
+        .where({
+          stockCode: posRes.data.stockCode
+        })
+        .orderBy('tradeTime', 'desc')
+        .get();
+
+      console.log('交易记录数量：', transRes.data.length);
+      console.log('交易记录：', transRes.data);
+
       const avgCost = posRes.data.avgCost;
       const quantity = posRes.data.quantity;
       const currentPrice = currentPriceFromQuote || avgCost;
