@@ -56,6 +56,13 @@
 .search-btn {
   width: 100%;
   margin-top: 20rpx;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.search-btn[disabled] {
+  opacity: 0.6;
 }
 
 .search-result {
@@ -85,4 +92,7 @@
 .submit-btn {
   width: 100%;
   margin-top: 40rpx;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }

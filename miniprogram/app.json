@@ -22,26 +22,26 @@
       {
         "pagePath": "pages/index/index",
         "text": "持仓",
-        "iconPath": "images/tab/home.svg",
-        "selectedIconPath": "images/tab/home-active.svg"
+        "iconPath": "images/tab/home.png",
+        "selectedIconPath": "images/tab/home-active.png"
       },
       {
         "pagePath": "pages/transaction/transaction",
         "text": "记录",
-        "iconPath": "images/tab/record.svg",
-        "selectedIconPath": "images/tab/record-active.svg"
+        "iconPath": "images/tab/record.png",
+        "selectedIconPath": "images/tab/record-active.png"
       },
       {
         "pagePath": "pages/add-position/add-position",
         "text": "添加",
-        "iconPath": "images/tab/add.svg",
-        "selectedIconPath": "images/tab/add-active.svg"
+        "iconPath": "images/tab/add.png",
+        "selectedIconPath": "images/tab/add-active.png"
       },
       {
         "pagePath": "pages/settings/settings",
         "text": "设置",
-        "iconPath": "images/tab/settings.svg",
-        "selectedIconPath": "images/tab/settings-active.svg"
+        "iconPath": "images/tab/settings.png",
+        "selectedIconPath": "images/tab/settings-active.png"
       }
     ]
   },

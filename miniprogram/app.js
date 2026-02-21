@@ -2,6 +2,12 @@
 App({
   onLaunch() {
     console.log('持股成本管理助手启动');
+
+    // 初始化云开发
+    wx.cloud.init({
+      env: 'stock-cost-manager-5dnlifb5283a2',
+      traceUser: true
+    });
   },
 
   globalData: {

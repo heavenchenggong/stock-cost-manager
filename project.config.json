@@ -41,8 +41,9 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.19.4",
-  "appid": "your_appid_here",
+  "appid": "wx0538237312a91c0a",
   "projectname": "stock-cost-manager",
+  "miniprogramRoot": "./miniprogram/",
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
