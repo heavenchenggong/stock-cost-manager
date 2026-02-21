@@ -86,12 +86,12 @@
 .position-name {
   font-size: 32rpx;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #323233 !important;
 }
 
 .position-code {
   font-size: 24rpx;
-  color: var(--text-light);
+  color: #646566 !important;
   margin-top: 4rpx;
 }
 
@@ -102,7 +102,7 @@
 .value-amount {
   font-size: 36rpx;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #323233 !important;
 }
 
 .position-details {
@@ -118,11 +118,12 @@
 
 .detail-label {
   font-size: 22rpx;
-  color: var(--text-light);
+  color: #969799 !important;
 }
 
 .detail-value {
   font-size: 28rpx;
   font-weight: 500;
   margin-top: 6rpx;
+  color: #323233 !important;
 }

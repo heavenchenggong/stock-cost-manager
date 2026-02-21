@@ -31,18 +31,18 @@
 
 .type-buy {
   background: #fff1f0;
-  color: var(--danger-color);
+  color: #ee0a24 !important;
 }
 
 .type-sell {
   background: #f6ffed;
-  color: var(--success-color);
+  color: #07c160 !important;
 }
 
 .transaction-stock {
   font-size: 28rpx;
   font-weight: 500;
-  color: var(--text-primary);
+  color: #323233 !important;
 }
 
 .transaction-details {
@@ -58,11 +58,11 @@
 
 .detail-label {
   font-size: 26rpx;
-  color: var(--text-light);
+  color: #969799 !important;
 }
 
 .detail-value {
   font-size: 26rpx;
   font-weight: 500;
-  color: var(--text-primary);
+  color: #323233 !important;
 }
